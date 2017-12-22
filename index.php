@@ -1,7 +1,7 @@
 <?php
 require_once 'model/database.php';
 
-$liste_logements = getAllLogements();
+$liste_logements = getAllLogements(3);
 
 require_once 'layout/header.php';
 ?>

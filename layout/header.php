@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="container main-header">
-                <a href="index.html" class="logo">
+                <a href="index.php" class="logo">
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-home fa-stack-1x fa-inverse"></i>
