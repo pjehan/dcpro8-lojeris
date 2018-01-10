@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__ . "/../model/database.php";
 
-$referer = basename($_SERVER['HTTP_REFERER']);
+$referer = (isset($_SERVER['HTTP_REFERER'])) ? basename($_SERVER['HTTP_REFERER']) : "";
 
 // Vérifier si le formulaire de login a été envoyé
 if ($referer == "login.php" && isset($_POST["email"]) && isset($_POST["mot_de_passe"])) {

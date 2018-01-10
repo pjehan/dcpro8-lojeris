@@ -42,7 +42,9 @@ SELECT
 FROM image
 WHERE image.logement_id = 1;
 
+SELECT SHA1('pjehan');
 
+UPDATE utilisateur SET mot_de_passe = SHA1(mot_de_passe);
 
 
 

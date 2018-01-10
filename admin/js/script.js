@@ -10,7 +10,10 @@ for (var i = 0; i < deleteBtns.length; i++) {
             var url = this.getAttribute("href");
             fetch(url, {credentials: "same-origin"})
                     .then(function (response) {
-                        console.log(event.target);
+                        event.target.closest("tr").remove();
+                    })
+                    .catch(function (error) {
+                        console.log(error);
                     });
         }
     });

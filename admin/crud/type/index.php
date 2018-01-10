@@ -2,10 +2,10 @@
 require_once __DIR__ . "/../../../model/database.php";
 require_once __DIR__ . "/../../layout/header.php";
 
-$liste_deroules = getAllDeroulesByUtilisateur($utilisateur["id"]);
+$liste_types = getAllTypes();
 ?>
 
-<h1>Gestion des déroulés</h1>
+<h1>Gestion des types</h1>
 
 <a href="insert_form.php" class="btn btn-primary">
     <i class="fa fa-plus"></i>
@@ -17,26 +17,20 @@ $liste_deroules = getAllDeroulesByUtilisateur($utilisateur["id"]);
 <table class="table table-striped">
     <thead class="thead-inverse">
         <tr>
-            <th>Mariage</th>
-            <th>Titre</th>
-            <th>Heure</th>
-            <th>Lieu</th>
+            <th>Libellé</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($liste_deroules as $deroule) : ?>
+        <?php foreach ($liste_types as $type) : ?>
         <tr>
-            <td><?php echo $deroule["evenement_lieu"]; ?></td>
-            <td><?php echo $deroule["titre"]; ?></td>
-            <td><?php echo $deroule["heure"]; ?></td>
-            <td><?php echo $deroule["lieu"]; ?></td>
+            <td><?php echo $type["libelle"]; ?></td>
             <td>
-                <a href="delete_query.php?id=<?php echo $deroule["id"] ?>" class="btn btn-danger">
+                <a href="delete_query.php?id=<?php echo $type["id"] ?>" class="btn btn-danger">
                     <i class="fa fa-trash"></i>
                     Supprimer
                 </a>
-                <a href="update_form.php?id=<?php echo $deroule["id"] ?>" class="btn btn-primary">
+                <a href="update_form.php?id=<?php echo $type["id"] ?>" class="btn btn-primary">
                     <i class="fa fa-edit"></i>
                     Modifier
                 </a>

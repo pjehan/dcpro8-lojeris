@@ -2,8 +2,9 @@
 require_once __DIR__ . "/../../security.php";
 require_once __DIR__ . "/../../../model/database.php";
 
-$id = $_GET["id"];
+$id = $_POST["id"];
+$libelle = $_POST["libelle"];
 
-deleteDeroule($id);
+updateType($id, $libelle);
 
-header("Location: index.php");
+header('Location: index.php');

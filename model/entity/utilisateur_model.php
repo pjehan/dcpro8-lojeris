@@ -5,7 +5,8 @@ function getUtilisateur($id) {
 
     $query = "SELECT
                 utilisateur.id,
-                utilisateur.email
+                utilisateur.email,
+                utilisateur.admin
             FROM utilisateur
             WHERE utilisateur.id = :id
             ";
@@ -22,7 +23,8 @@ function getUtilisateurByEmailMotDePasse($email, $mot_de_passe) {
 
     $query = "SELECT
                 utilisateur.id,
-                utilisateur.email
+                utilisateur.email,
+                utilisateur.admin
             FROM utilisateur
             WHERE utilisateur.email = :email
             AND utilisateur.mot_de_passe = SHA1(:mot_de_passe)
@@ -41,7 +43,7 @@ function insertUtilisateur($email, $mot_de_passe) {
 
     $query = "
         INSERT INTO utilisateur (email, mot_de_passe, admin)
-            VALUES (:email, SHA1(:mot_de_passe), false);
+            VALUES (:email, SHA1(:mot_de_passe), 0);
     ";
 
     $stmt = $connection->prepare($query);

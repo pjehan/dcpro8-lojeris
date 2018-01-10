@@ -6,7 +6,7 @@
         
         <h1>Créer un compte</h1>
 
-        <form action="admin/" method="POST">
+        <form action="index.php" method="POST">
             <div>
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Email" required>

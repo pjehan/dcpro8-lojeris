@@ -63,7 +63,7 @@ require_once __DIR__ . "/../security.php";
                             <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/evenement/">Evénements</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/deroule/">Déroulés</a>
+                            <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/type/">Types</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo $param['site_url'] ?>admin/crud/formulaire/">Formulaires</a>
