@@ -3,6 +3,7 @@ require_once 'model/database.php';
 
 $liste_logements = getAllLogements(3);
 
+$header["titre"] = "Accueil";
 require_once 'layout/header.php';
 ?>
 <header class="home-banner">

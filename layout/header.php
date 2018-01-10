@@ -2,7 +2,13 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Lojeris</title>
+        <title>Lojeris - <?php echo $header["titre"]; ?></title>
+
+        <?php if (isset($header["css"])) : ?>
+            <?php foreach ($header["css"] as $css) : ?>
+                <link rel="stylesheet" href="<?php echo $css; ?>">
+            <?php endforeach; ?>
+        <?php endif; ?>
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
