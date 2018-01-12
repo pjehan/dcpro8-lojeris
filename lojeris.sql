@@ -42,9 +42,29 @@ SELECT
 FROM image
 WHERE image.logement_id = 1;
 
-SELECT SHA1('pjehan');
+SELECT SHA1('jdupont');
 
-UPDATE utilisateur SET mot_de_passe = SHA1(mot_de_passe);
+SELECT
+	quartier.id,
+    quartier.libelle,
+    ville.libelle AS ville,
+    ville.cp,
+    CONCAT(ville.libelle, ' - ', quartier.libelle) AS libelle_complet
+FROM quartier
+INNER JOIN ville ON ville.id = quartier.ville_id;
+
+SELECT commercial.*
+FROM commercial
+INNER JOIN logement_has_commercial
+	ON logement_has_commercial.commercial_id = commercial.id
+WHERE logement_has_commercial.logement_id = 5
+;
+
+
+
+
+
+
 
 
 

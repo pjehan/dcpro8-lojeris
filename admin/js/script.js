@@ -10,7 +10,11 @@ for (var i = 0; i < deleteBtns.length; i++) {
             var url = this.getAttribute("href");
             fetch(url, {credentials: "same-origin"})
                     .then(function (response) {
-                        event.target.closest("tr").remove();
+                        if (response.ok) {
+                            event.target.closest("tr").remove();
+                        } else {
+                            alert("Suppression impossible");
+                        }
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -18,3 +22,11 @@ for (var i = 0; i < deleteBtns.length; i++) {
         }
     });
 }
+
+$(document).ready(function () {
+    $('select').select2();
+    $('table').DataTable();
+    tinymce.init({
+        selector: 'textarea'
+    });
+});
